@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FibStein × WEEX — Partnership Live</title>
+  <meta name="description" content="FibStein × WEEX. Markets are math — join through FibStein. Spot + futures. Code cebi." />
+  <meta property="og:title" content="FibStein × WEEX — Partnership Live" />
+  <meta property="og:description" content="order in the chaos. Register on WEEX through FibStein." />
+  <meta property="og:image" content="https://drive.google.com/thumbnail?id=1X7VDzljv1OplQyBM9bJ8KD9TDsb4PCWP&sz=w1500" />
+  <link rel="icon" href="https://drive.google.com/thumbnail?id=1KFAgbZtJCJTqmUwnqj-nDoQX2tNIvO9b&sz=w800" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper:#FFFFFF; --ink:#16161D; --a:#FF4D8D; --z:#B66CFC;
+      --muted:rgba(255,255,255,.62); --glass:rgba(255,255,255,.06); --line:rgba(255,255,255,.1);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"IBM Plex Sans",system-ui,sans-serif;background:var(--ink);color:var(--paper);line-height:1.55;min-height:100vh}
+    .mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1080px,calc(100% - 2rem));margin:0 auto}
+    .bg{position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+      radial-gradient(900px 500px at 85% -10%,rgba(182,108,252,.22),transparent 55%),
+      radial-gradient(700px 420px at -10% 20%,rgba(255,77,141,.18),transparent 50%),
+      linear-gradient(180deg,#16161D,#121218)}
+    nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);background:rgba(22,22,29,.72);border-bottom:1px solid var(--line)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.7rem;font-weight:700;letter-spacing:.04em}
+    .brand img{width:36px;height:36px;border-radius:999px;border:1px solid rgba(255,77,141,.45);object-fit:cover}
+    .nav-links{display:flex;align-items:center;gap:.75rem}
+    .nav-links a.ghost{color:var(--muted);font-size:.92rem;padding:.45rem .7rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;border-radius:999px;padding:.75rem 1.25rem;font-weight:600;font-size:.95rem;border:1px solid transparent;transition:transform .15s ease,box-shadow .15s ease;cursor:pointer}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(135deg,var(--a),var(--z));color:#fff;box-shadow:0 10px 30px rgba(255,77,141,.25)}
+    .btn-ghost{background:var(--glass);border-color:var(--line);color:var(--paper)}
+    .hero{padding:4.5rem 0 3rem}
+    .pill{display:inline-flex;align-items:center;gap:.45rem;border:1px solid rgba(182,108,252,.35);background:rgba(182,108,252,.08);color:#e9d5ff;border-radius:999px;padding:.35rem .75rem;font-size:.8rem;margin-bottom:1.25rem}
+    .hero-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:2rem;align-items:center}
+    @media (max-width:860px){.hero-grid{grid-template-columns:1fr}.nav-links a.ghost{display:none}}
+    h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:.85rem}
+    h1 .x{background:linear-gradient(135deg,var(--a),var(--z));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .tagline{font-size:1.15rem;color:var(--muted);max-width:34rem;margin-bottom:1.5rem}
+    .cta-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1.25rem}
+    .code-chip{display:inline-flex;align-items:center;gap:.6rem;background:var(--glass);border:1px solid var(--line);border-radius:12px;padding:.7rem .9rem;font-size:.92rem}
+    .code-chip strong{color:var(--a);letter-spacing:.06em}
+    .copy{border:0;background:transparent;color:var(--muted);cursor:pointer;font:inherit;text-decoration:underline;text-underline-offset:3px}
+    .hero-card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:rgba(255,255,255,.03);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+    .hero-card img.banner{width:100%;display:block;aspect-ratio:3/1;object-fit:cover;background:#1a1a22}
+    .hero-card .body{padding:1.1rem 1.2rem 1.3rem}
+    .levels{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.85rem}
+    .levels span{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:999px;padding:.2rem .5rem}
+    section{padding:2.75rem 0}
+    h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;margin-bottom:1rem}
+    .muted{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.25rem}
+    @media (max-width:860px){.cards{grid-template-columns:1fr}}
+    .card{background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:1.2rem}
+    .card h3{font-size:1.05rem;margin-bottom:.45rem}
+    .card p{color:var(--muted);font-size:.95rem}
+    .steps{counter-reset:step;display:grid;gap:.85rem;margin-top:1.1rem}
+    .step{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start;border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;background:rgba(255,255,255,.03)}
+    .step::before{counter-increment:step;content:counter(step);width:1.8rem;height:1.8rem;border-radius:999px;display:grid;place-items:center;font-weight:700;font-size:.85rem;background:linear-gradient(135deg,var(--a),var(--z))}
+    .perk{margin-top:1rem;border-radius:18px;padding:1.35rem 1.4rem;border:1px solid rgba(255,77,141,.35);background:linear-gradient(135deg,rgba(255,77,141,.12),rgba(182,108,252,.12))}
+    .perk strong{color:#ffc2d8}
+    .cta-band{margin:1.5rem 0 0;padding:1.6rem;border-radius:20px;border:1px solid var(--line);text-align:center;background:rgba(255,255,255,.03)}
+    .cta-band p{color:var(--muted);margin:.5rem 0 1rem}
+    footer{border-top:1px solid var(--line);padding:2rem 0 2.5rem;color:var(--muted);font-size:.88rem}
+    footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+    .toast{position:fixed;bottom:1.25rem;right:1.25rem;z-index:50;background:#22222c;border:1px solid var(--line);color:var(--paper);padding:.65rem .9rem;border-radius:10px;opacity:0;transform:translateY(8px);transition:.2s ease;pointer-events:none}
+    .toast.show{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">
+        <img src="https://drive.google.com/thumbnail?id=1KFAgbZtJCJTqmUwnqj-nDoQX2tNIvO9b&sz=w800" alt="FibStein" />
+        <span class="mono">FIBSTEIN</span>
+      </a>
+      <div class="nav-links">
+        <a class="ghost" href="https://x.com/FibStein" target="_blank" rel="noopener">X / FibStein</a>
+        <a class="btn btn-primary" id="cta-nav" href="https://www.weex.com/en/register?vipCode=cebi" target="_blank" rel="noopener">Join WEEX</a>
+      </div>
+    </div>
+  </nav>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="pill mono"><span>●</span> Partnership live</div>
+          <h1>FIBSTEIN <span class="x">×</span> WEEX</h1>
+          <p class="tagline">order in the chaos.<br/>Markets are math — I just do the arithmetic.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://www.weex.com/en/register?vipCode=cebi" target="_blank" rel="noopener">Register on WEEX</a>
+            <a class="btn btn-ghost" href="#how">How it works</a>
+          </div>
+          <div class="code-chip mono">
+            <span>VIP code</span>
+            <strong id="vip-code">cebi</strong>
+            <button class="copy" type="button" onclick="copyCode()">Copy</button>
+          </div>
+          <p class="muted" style="margin-top:.85rem;font-size:.9rem">Attribution locks at signup. Use this link/code so you’re tagged to FibStein.</p>
+        </div>
+        <div class="hero-card">
+          <img class="banner" src="https://drive.google.com/thumbnail?id=1X7VDzljv1OplQyBM9bJ8KD9TDsb4PCWP&sz=w1500" alt="FibStein banner" />
+          <div class="body">
+            <p class="mono" style="font-size:.85rem;color:#ffc2d8">Perps · order flow · liquidity</p>
+            <p class="muted" style="margin-top:.4rem;font-size:.92rem">CVD doesn’t lie. Funding tells the truth.</p>
+            <div class="levels mono" aria-label="Fibonacci levels">
+              <span>0.236</span><span>0.382</span><span>0.500</span><span>0.618</span><span>0.786</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="why">
+      <div class="wrap">
+        <h2>Why through FibStein</h2>
+        <p class="muted" style="max-width:40rem">Same exchange. Cleaner path. You get the FibStein Launch tracking + invitee rebate structure — volume attributes clean in the affiliate portal.</p>
+        <div class="cards">
+          <div class="card"><h3>Math over noise</h3><p>Entries = margin × conviction². No carnival pitch — just the register path and the levels.</p></div>
+          <div class="card"><h3>Spot + futures</h3><p>Trade on WEEX under the FibStein referral so volume and rebates attribute correctly.</p></div>
+          <div class="card"><h3>Campaign-ready</h3><p>Launch code now; dedicated FibStein Launch / Weekly / event codes next from the portal.</p></div>
+        </div>
+      </div>
+    </section>
+    <section id="how">
+      <div class="wrap">
+        <h2>How to join</h2>
+        <div class="steps">
+          <div class="step"><div><h3>Open the FibStein link</h3><p class="muted">https://www.weex.com/en/register?vipCode=cebi</p></div></div>
+          <div class="step"><div><h3>Register with code <span class="mono" style="color:#FF4D8D">cebi</span></h3><p class="muted">If you skip the code, the relationship usually can’t be attached later.</p></div></div>
+          <div class="step"><div><h3>Deposit &amp; trade</h3><p class="muted">Spot or futures — that’s when rebate + commission tracking starts.</p></div></div>
+        </div>
+        <div class="perk">
+          <p><strong>Launch perk:</strong> FibStein Launch targets ~20% rebate to invitees (spot + futures). Evergreen code <span class="mono">cebi</span> stays live while the timed Launch campaign rolls out in the affiliate portal.</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap">
+        <div class="cta-band">
+          <h2>Ready when you are</h2>
+          <p>One link. One code. Lock attribution at signup.</p>
+          <div class="cta-row" style="justify-content:center">
+            <a class="btn btn-primary" href="https://www.weex.com/en/register?vipCode=cebi" target="_blank" rel="noopener">Join WEEX with FibStein</a>
+            <button class="btn btn-ghost" type="button" onclick="copyCode()">Copy code cebi</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="row">
+        <div>
+          <div class="mono" style="color:#fff;margin-bottom:.35rem">FIBSTEIN</div>
+          <div>order in the chaos.</div>
+        </div>
+        <div>
+          <a href="https://x.com/FibStein" target="_blank" rel="noopener">@FibStein on X</a>
+          ·
+          <a href="https://www.weex.com" target="_blank" rel="noopener">WEEX</a>
+        </div>
+      </div>
+      <p style="margin-top:1.25rem;max-width:48rem">Not financial advice. Crypto trading involves substantial risk of loss. WEEX is a third-party exchange; FibStein is an independent partner/affiliate. Availability of products and promotions may vary by region.</p>
+    </div>
+  </footer>
+  <div class="toast" id="toast">Copied cebi</div>
+  <script>
+    function copyCode(){
+      const code=document.getElementById('vip-code').textContent.trim();
+      navigator.clipboard.writeText(code).then(()=>{
+        const t=document.getElementById('toast');
+        t.textContent='Copied '+code;
+        t.classList.add('show');
+        setTimeout(()=>t.classList.remove('show'),1600);
+      });
+    }
+  </script>
+</body>
+</html>
